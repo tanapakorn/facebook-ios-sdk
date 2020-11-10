@@ -62,7 +62,7 @@ static NSMutableSet<NSString *> *_deprecatedEvents;
   if (!isRestrictiveEventFilterEnabled) {
     return;
   }
-  if (restrictiveParams.count > 0) {
+  if (restrictiveParams != (id)[NSNull null] && restrictiveParams.count > 0) {
     [_params removeAllObjects];
     [_deprecatedEvents removeAllObjects];
     NSMutableArray<FBSDKRestrictiveEventFilter *> *eventFilterArray = [NSMutableArray array];
